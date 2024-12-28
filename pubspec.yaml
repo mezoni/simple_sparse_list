@@ -1,6 +1,6 @@
 name: simple_sparse_list
 description: A simple and efficient implementation of an unmodifiable sparse list based on the binary search algorithm.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/mezoni/simple_sparse_list
 environment:
   sdk: '>=3.0.0 <4.0.0'

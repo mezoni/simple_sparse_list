@@ -47,6 +47,8 @@ class SparseList<E> extends ListBase<E> {
   @override
   void operator []=(int index, E value) => throw UnsupportedError('[]=');
 
+  List<(int, int, E)> getGroups() => UnmodifiableListView(_data);
+
   void _checkIntersection(List<(int, int, E)> data) {
     if (data.length < 2) {
       return;
