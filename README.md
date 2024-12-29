@@ -2,7 +2,7 @@
 
 A simple and efficient implementation of an unmodifiable sparse list based on the binary search algorithm.
 
-Version: 0.1.1
+Version: 0.1.2
 
 [![Pub Package](https://img.shields.io/pub/v/simple_sparse_list.svg)](https://pub.dev/packages/simple_sparse_list)
 [![GitHub Issues](https://img.shields.io/github/issues/mezoni/simple_sparse_list.svg)](https://github.com/mezoni/simple_sparse_list/issues)
@@ -39,7 +39,7 @@ final _data = [
   (97, 122, Letter.lowerCase),
 ];
 
-final _list = SparseList(_data, Letter.unknown, length: 0x10ffff);
+final _list = SparseList(_data, Letter.unknown, length: 0x10ffff + 1);
 
 void _test(int c) {
   final kind = _list[c];

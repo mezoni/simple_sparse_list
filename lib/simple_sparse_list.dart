@@ -21,8 +21,11 @@ class SparseList<E> extends ListBase<E> {
       }
 
       if (length < _length) {
-        throw ArgumentError.value(length, 'length', 'not less than $_length');
+        throw ArgumentError.value(
+            length, 'length', 'Must be not less than $_length');
       }
+
+      _length = length;
     }
 
     _checkIntersection(_data);
@@ -37,7 +40,7 @@ class SparseList<E> extends ListBase<E> {
   @override
   E operator [](int index) {
     final length = this.length;
-    if (index < 0 && index >= length) {
+    if (index < 0 || index >= length) {
       throw RangeError.index(index, this, 'index');
     }
 

@@ -15,7 +15,7 @@ final _data = [
   (97, 122, Letter.lowerCase),
 ];
 
-final _list = SparseList(_data, Letter.unknown, length: 0x10ffff);
+final _list = SparseList(_data, Letter.unknown, length: 0x10ffff + 1);
 
 void _test(int c) {
   final kind = _list[c];
