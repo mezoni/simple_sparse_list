@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "example/example.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "example/example.dart"
+        },
+        {
+            "name": "test/test.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "test/test.dart"
+        }
+    ]
+}

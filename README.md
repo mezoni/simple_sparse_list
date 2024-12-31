@@ -2,7 +2,7 @@
 
 A simple and efficient implementation of an unmodifiable sparse list based on the binary search algorithm.
 
-Version: 0.1.2
+Version: 0.1.3
 
 [![Pub Package](https://img.shields.io/pub/v/simple_sparse_list.svg)](https://pub.dev/packages/simple_sparse_list)
 [![GitHub Issues](https://img.shields.io/github/issues/mezoni/simple_sparse_list.svg)](https://github.com/mezoni/simple_sparse_list/issues)
@@ -22,6 +22,7 @@ Possible applications are handling Unicode data in converters, matchers, parsers
 ## Sparse list example
 
 ```dart
+import 'package:simple_sparse_list/ranges_helper.dart';
 import 'package:simple_sparse_list/simple_sparse_list.dart';
 
 void main(List<String> args) {
@@ -31,6 +32,34 @@ void main(List<String> args) {
   _test(100);
   _test(320);
   _test(0x10ffff);
+
+  const values = [
+    (0, 0, {'A'}),
+    (0, 2, {'B'}),
+    (3, 4, {'B'}),
+    (5, 6, {'C'}),
+    (8, 9, {'D'}),
+    (9, 10, {'E'}),
+  ];
+
+  final combined = combineRanges<Set<String>>(values, combine: (x, y) {
+    return {...x, ...y};
+  }, compare: (x, y) {
+    if (x.length != y.length) {
+      return false;
+    }
+
+    for (final element in y) {
+      if (!x.contains(element)) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  print(values);
+  print(combined);
 }
 
 final _data = [
@@ -59,4 +88,6 @@ Output:
 100: Letter.lowerCase
 320: Letter.unknown
 1114111: Letter.unknown
+[(0, 0, {A}), (0, 2, {B}), (3, 4, {B}), (5, 6, {C}), (8, 9, {D}), (9, 10, {E})]
+[(0, 0, {A, B}), (1, 4, {B}), (5, 6, {C}), (8, 8, {D}), (9, 9, {D, E}), (10, 10, {E})]
 ```

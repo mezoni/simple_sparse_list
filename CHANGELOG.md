@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Added new feature: The ability to combine ranges with values.
+
 ## 0.1.2
 
 - Fixed error processing the `length` parameter in the `SparseList` class constructor.

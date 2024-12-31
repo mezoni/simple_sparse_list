@@ -1,3 +1,4 @@
+import 'package:simple_sparse_list/ranges_helper.dart';
 import 'package:simple_sparse_list/simple_sparse_list.dart';
 
 void main(List<String> args) {
@@ -7,6 +8,34 @@ void main(List<String> args) {
   _test(100);
   _test(320);
   _test(0x10ffff);
+
+  const values = [
+    (0, 0, {'A'}),
+    (0, 2, {'B'}),
+    (3, 4, {'B'}),
+    (5, 6, {'C'}),
+    (8, 9, {'D'}),
+    (9, 10, {'E'}),
+  ];
+
+  final combined = combineRanges<Set<String>>(values, combine: (x, y) {
+    return {...x, ...y};
+  }, compare: (x, y) {
+    if (x.length != y.length) {
+      return false;
+    }
+
+    for (final element in y) {
+      if (!x.contains(element)) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  print(values);
+  print(combined);
 }
 
 final _data = [
