@@ -69,8 +69,7 @@ void _combineRanges() {
       return values;
     }
 
-    // TODO 2
-    const maxLevel = 2;
+    const maxLevel = 3;
     const mark = '-';
     List<String> generate(int level) {
       const rangeLen = 2;
@@ -295,10 +294,6 @@ void _testSparseList() {
 }
 
 extension on Map<int, Set<int>> {
-  String get s {
-    return entries.map((e) => '${e.key}: {${e.value.join(', ')}}').join(', ');
-  }
-
   String get ss {
     return entries.map((e) {
       final values = e.value.toList();
