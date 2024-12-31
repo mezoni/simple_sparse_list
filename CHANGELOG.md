@@ -1,6 +1,7 @@
 ## 0.1.3
 
 - Added new feature: The ability to combine ranges with values.
+- Added a comprehensive test to check the range combining procedure.
 
 ## 0.1.2
 
