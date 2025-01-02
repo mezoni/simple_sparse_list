@@ -108,12 +108,6 @@ void _combineRanges() {
       patterns[i] = lines.join('\n');
     }
 
-    //patterns.clear();
-    patterns.add('''
- --
- --
-  -''');
-
     for (var i = 0; i < patterns.length; i++) {
       final pattern = patterns[i];
       final data = pattern2map(pattern);
