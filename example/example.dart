@@ -13,9 +13,11 @@ void main(List<String> args) {
     (0, 0, {'A'}),
     (0, 2, {'B'}),
     (3, 4, {'B'}),
-    (5, 6, {'C'}),
-    (8, 9, {'D'}),
-    (9, 10, {'E'}),
+    (5, 8, {'C'}),
+    (6, 7, {'D'}),
+    (10, 14, {'E'}),
+    (11, 12, {'E'}),
+    (16, 17, {'F'}),
   ];
 
   final combined = combineRanges<Set<String>>(values, combine: (x, y) {

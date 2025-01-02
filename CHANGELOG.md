@@ -1,3 +1,8 @@
+## 0.1.4
+
+- Fixed bug in `combineRanges`
+- The range combining algorithm has been reimplemented.
+
 ## 0.1.3
 
 - Added new feature: The ability to combine ranges with values.

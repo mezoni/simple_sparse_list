@@ -2,7 +2,7 @@
 
 A simple and efficient implementation of an unmodifiable sparse list based on the binary search algorithm.
 
-Version: 0.1.3
+Version: 0.1.4
 
 [![Pub Package](https://img.shields.io/pub/v/simple_sparse_list.svg)](https://pub.dev/packages/simple_sparse_list)
 [![GitHub Issues](https://img.shields.io/github/issues/mezoni/simple_sparse_list.svg)](https://github.com/mezoni/simple_sparse_list/issues)

@@ -69,10 +69,10 @@ void _combineRanges() {
       return values;
     }
 
-    const maxLevel = 3;
+    const maxLevel = 2;
     const mark = '-';
     List<String> generate(int level) {
-      const rangeLen = 2;
+      const rangeLen = 5;
       final result = <String>[];
       final next = level > 0 ? generate(level - 1) : <String>[];
       for (var pos = 0; pos < (rangeLen + maxLevel * 2); pos++) {
@@ -108,6 +108,12 @@ void _combineRanges() {
       patterns[i] = lines.join('\n');
     }
 
+    //patterns.clear();
+    patterns.add('''
+ --
+ --
+  -''');
+
     for (var i = 0; i < patterns.length; i++) {
       final pattern = patterns[i];
       final data = pattern2map(pattern);
@@ -120,7 +126,7 @@ void _combineRanges() {
       for (final element in r2) {
         expect(element.$2 > lastEnd, true,
             reason:
-                'The last end value ($lastEnd) is not greater than the previous end value: $element');
+                'The last end value ($lastEnd) is not greater than the previous end value: $element\n$pattern');
         lastEnd = element.$2;
       }
     }
